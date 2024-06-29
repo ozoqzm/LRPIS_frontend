@@ -211,12 +211,33 @@ const Btn = styled.div`
   box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
 
   #icon {
+    margin-left: 10px;
   }
   #subtitle {
+    position: absolute;
+    left: 40px;
+    color: #333;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
   }
   #detail {
+    position: absolute;
+    left: 180px;
+    color: #888;
+    font-family: Inter;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.16px;
   }
   #nicon {
+    position: absolute;
+    margin-left: 300px;
   }
 `;
 const Footer = styled.div`
