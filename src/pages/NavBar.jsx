@@ -79,7 +79,7 @@ const Nav = () => {
           <Icon>
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
-              width="14px"
+              width="15px"
             />
           </Icon>
           <Icon>
