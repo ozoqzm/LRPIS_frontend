@@ -7,12 +7,13 @@ const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
-  min-height: 1241px;
+  height: 1241px;
   background: var(--Gray-Mobileregular, #f6f7f9);
 `;
 const Banner = styled.div`
   position: relative;
   margin: 0 auto;
+  margin-top: 15px;
   display: flex;
   width: 345px;
   height: 51px;
@@ -39,7 +40,7 @@ const Banner = styled.div`
 
 const DepositNotice = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-left: 30px;
   #nickname {
     color: #474c52;
@@ -65,7 +66,7 @@ const AccountBtn = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 20px;
   width: 345px;
   height: 54px;
   border-radius: 15px;
@@ -106,6 +107,7 @@ const Exception = styled.div`
   position: relative;
   margin: 0 auto;
   margin-top: 15px;
+  margin-bottom: 30px;
   color: #888;
   text-align: center;
   font-family: Inter;
@@ -118,7 +120,7 @@ const Exception = styled.div`
 `;
 const Title = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-left: 30px;
   color: #333;
   font-family: Inter;
@@ -130,44 +132,113 @@ const Title = styled.div`
 `;
 const BoardWrapper = styled.div`
   position: relative;
-  margin-top: 20px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
   display: flex;
   height: 200px;
+  width: 360px;
   overflow-x: auto;
-  white-space: nowrap;
   ::-webkit-scrollbar {
     display: none;
   }
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+`;
+const BoardWrapper2 = styled.div`
+  position: relative;
+  padding: 5px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  width: 360px;
+  height: 155px;
+  overflow-x: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
 `;
 const ManageBoard = styled.div`
   position: relative;
-  margin-left: 20px;
   width: 180px;
-  height: 197px;
+  height: 195px;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
   flex-shrink: 0;
+  & + & {
+    margin-left: 20px;
+  }
 `;
 const JobBoard = styled.div`
   position: relative;
-  margin-top: 20px;
-  margin-left: 30px;
-  width: 243px;
-  height: 152px;
+  width: 240px;
+  height: 150px;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  & + & {
+    margin-left: 20px;
+  }
+
+  #location {
+  }
+
+  #thumbnail {
+    width: 210px;
+    height: 62px;
+    border-radius: 15px;
+  }
+  #content {
+  }
+  #salary {
+  }
 `;
 const Btn = styled.div`
   position: relative;
-  margin-top: 30px;
+  display: flex;
+  align-items: center;
   margin: 0 auto;
+  margin: auto;
+  margin-top: 18px;
   width: 345px;
   height: 54px;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
+
+  #icon {
+    margin-left: 10px;
+  }
+  #subtitle {
+    position: absolute;
+    left: 40px;
+    color: #333;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+  }
+  #detail {
+    position: absolute;
+    left: 180px;
+    color: #888;
+    font-family: Inter;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.16px;
+  }
+  #nicon {
+    position: absolute;
+    margin-left: 300px;
+  }
 `;
 const Footer = styled.div`
   position: absolute;
@@ -175,6 +246,15 @@ const Footer = styled.div`
   width: 390px;
   height: 160px;
   background: #eff0f4;
+  color: #888;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10;
+  letter-spacing: -0.2px;
+  text-decoration-line: underline;
 `;
 
 const Main = () => {
@@ -185,6 +265,7 @@ const Main = () => {
         <img
           src={`${process.env.PUBLIC_URL}/images/card.svg`}
           width="15px"
+          alt="card"
           id="card"
         />
         <span id="text">나에게 딱 맞는 유학생 전용 신용카드?</span>
@@ -217,8 +298,13 @@ const Main = () => {
       <Exception>월급이 입금되지 않았나요?</Exception>
       <Title>근무지 관리</Title>
       <BoardWrapper>
-        <ManageBoard></ManageBoard>
-        <ManageBoard></ManageBoard>
+        <ManageBoard>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/worklogo.svg`}
+            width="58px"
+            id="worklogo"
+          />
+        </ManageBoard>
         <div style={{ marginLeft: "20px" }}>
           <img
             src={`${process.env.PUBLIC_URL}/images/addwork.svg`}
@@ -226,13 +312,46 @@ const Main = () => {
           />
         </div>
       </BoardWrapper>
-
       <Title>유학생 추천 구인구직</Title>
-      <JobBoard></JobBoard>
+      <BoardWrapper2>
+        <JobBoard>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/sample1.svg`}
+            id="thumbnail"
+          />
+        </JobBoard>
+        <JobBoard>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/sample2.svg`}
+            id="thumbnail"
+          />
+        </JobBoard>
+      </BoardWrapper2>
       <Title>커뮤니티</Title>
-      <Btn></Btn>
-      <Btn></Btn>
-      <Footer></Footer>
+      <Btn>
+        <img
+          src={`${process.env.PUBLIC_URL}/images/vietnam.svg`}
+          width="20px"
+          id="icon"
+        />
+        <span id="subtitle">베트남 유학생 게시판</span>
+        <span id="detail">Có công việc bán thời gian nào...</span>
+        <img
+          src={`${process.env.PUBLIC_URL}/images/nicon.svg`}
+          width="13px"
+          id="nicon"
+        />
+      </Btn>
+      <Btn>
+        <span id="subtitle">인기게시판</span>
+        <span id="detail">What should I do when my bos...</span>
+        <img
+          src={`${process.env.PUBLIC_URL}/images/nicon.svg`}
+          width="13px"
+          id="nicon"
+        />
+      </Btn>
+      <Footer>개인정보처리방침</Footer>
       <MenuBar></MenuBar>
     </Container>
   );
