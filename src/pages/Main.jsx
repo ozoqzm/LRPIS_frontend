@@ -267,7 +267,7 @@ const Btn = styled.div`
 `;
 const FloatBtn = styled.div`
   position: fixed;
-  left: 390px;
+  margin-left: 330px;
   bottom: 120px;
   display: flex;
   flex-direction: column;
@@ -308,10 +308,6 @@ const Main = () => {
   // 근무지 추가로 이동
   const gotoAddJob = () => {
     navigate("/addjob");
-  };
-  // 메뉴페이지로 이동
-  const gotoMenu = () => {
-    navigate("/menupage");
   };
   return (
     <Container>
