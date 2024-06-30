@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
-import MenuPage from "./MenuPage";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
-  position: absolute;
-  bottom: 0px;
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -17,6 +17,11 @@ const Btn = styled.div`
 `;
 
 const MenuBar = () => {
+  const navigate = useNavigate();
+  // 메뉴페이지로 이동
+  const gotoMenu = () => {
+    navigate("/menupage");
+  };
   return (
     <Container>
       <Btn>
@@ -47,7 +52,7 @@ const MenuBar = () => {
           width="22px"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={gotoMenu}>
         <img
           src={`${process.env.PUBLIC_URL}/images/menu.svg`}
           alt="logo"
