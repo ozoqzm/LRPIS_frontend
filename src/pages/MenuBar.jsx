@@ -18,7 +18,7 @@ const Btn = styled.div`
 
 const MenuBar = () => {
   const navigate = useNavigate();
-  // 메뉴페이지로 이동
+
   const gotoMenu = () => {
     navigate("/menupage");
   };

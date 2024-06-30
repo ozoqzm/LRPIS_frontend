@@ -175,17 +175,17 @@ const RecommendPage = () => {
         <Divider />
         <Select value={job} onChange={(e) => setJob(e.target.value)}>
           <option value="전체 업종">전체 업종</option>
-          <option value="IT/기술">IT/기술</option>
+          <option value="IT/기술">IT / 기술</option>
           <option value="디자인">디자인</option>
           <option value="미디어">미디어</option>
-          <option value="병원/간호/연구">병원/간호/연구</option>
-          <option value="교육/강사">교육/강사</option>
+          <option value="병원/간호/연구">병원 / 간호 / 연구</option>
+          <option value="교육/강사">교육 / 강사</option>
           <option value="서비스">서비스</option>
           <option value="사무직">사무직</option>
-          <option value="생산/건설/노무">생산/건설/노무</option>
-          <option value="외식/음료">외식/음료</option>
+          <option value="생산/건설/노무">생산 / 건설/노무</option>
+          <option value="외식/음료">외식 / 음료</option>
           <option value="매장관리 및 판매">매장관리 및 판매</option>
-          <option value="고객상담/리서치/연구">고객상담/리서치/연구</option>
+          <option value="고객상담/리서치/연구">고객상담 / 리서치 / 연구</option>
         </Select>
       </WhiteBox>
       <Contenttxt>

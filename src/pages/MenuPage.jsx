@@ -12,85 +12,80 @@ const Container = styled.div`
   background: var(--Gray-Mobileregular, #f6f7f9);
 `;
 const TopPart = styled.div`
-    display: flex;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 `;
 const CloseBtn = styled.div`
-    cursor: pointer;
-    margin-right: 20px;
+  cursor: pointer;
+  margin-right: 20px;
 `;
 const MenuTitle = styled.div`
-    color: var(---Black, #333);
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.36px;
+  color: var(---Black, #333);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.36px;
 `;
 const SettingIcon = styled.div`
-    margin-left: 250px;
+  margin-left: 250px;
 `;
 
 const NamePart = styled.div`
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-left : 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
 `;
-const PersonIcon = styled.div`
-
-`;
+const PersonIcon = styled.div``;
 const PersonNameTxt = styled.div`
-    margin-left: 10px;
-    color: #333;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.36px;
+  margin-left: 10px;
+  color: #333;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.36px;
 `;
 const FindPart = styled.div`
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  justify-content: space-between;
 `;
 const FindIcon = styled.div`
-margin-left : 5px;
-
+  margin-left: 5px;
 `;
 const FindMent = styled.div`
-    color: var(--gray-m-gray-4, #929292);
-    font-family: Inter;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.34px;
-    margin-left : 20px;
-    flex-grow: 1;
+  color: var(--gray-m-gray-4, #929292);
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.34px;
+  margin-left: 20px;
+  flex-grow: 1;
 `;
 const FindBtn = styled.div`
-margin-right : 30px;
-
+  margin-right: 30px;
 `;
 const FindunderLine = styled.div`
-    width: 345px;
-    height: 2px;
-    background-color: #ccc;
-    margin-left: 20px;
-    margin-top : 10px;
-
+  width: 345px;
+  height: 2px;
+  background-color: #ccc;
+  margin-left: 20px;
+  margin-top: 10px;
 `;
 
 const MenuListPart = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding : 20px;
+  padding: 20px;
 `;
 
 const ButtonContainer = styled.div`
@@ -133,9 +128,10 @@ const WhiteBox = styled.div`
 `;
 
 const WhiteBoxContent = styled.div`
+  cursor : pointer;
   display: flex;
   align-items: center;
-  gap : 15px;
+  gap: 15px;
 `;
 
 const BoxTitle = styled.div`
@@ -155,47 +151,162 @@ const Notification = styled.div`
   font-size: 14px;
   color: #666;
 `;
-const Menuicon = styled.div`
-
-`;
+const Menuicon = styled.div``;
 
 const MenuPage = () => {
-    const navigate = useNavigate();
-    const [activeButton, setActiveButton] = useState("계좌");
-  
-    const handleClose = () => {
-      navigate(-1);
-    };
-  
-    return (
-      <Container>
-        <Nav />
-        <TopPart>
-          <CloseBtn onClick={handleClose}>
-            <img src="../images/x.svg" />
-          </CloseBtn>
-          <MenuTitle>메뉴</MenuTitle>
-          <SettingIcon>
-            <img src="../images/setting.svg" />
-          </SettingIcon>
-        </TopPart>
-        <NamePart>
-          <PersonIcon>
-            <img src="../images/MY.svg" />
-          </PersonIcon>
-          <PersonNameTxt>HappyHana 님</PersonNameTxt>
-        </NamePart>
-        <FindPart>
-          <FindIcon>
-            <img src="../images/find.svg" />
-          </FindIcon>
-          <FindMent>궁금한 것을 검색해 보세요</FindMent>
-          <FindBtn>
-            <img src="../images/findbtn.svg" />
-          </FindBtn>
-        </FindPart>
-        <FindunderLine />
-        <MenuListPart>
+  const navigate = useNavigate();
+  const [activeButton, setActiveButton] = useState("계좌");
+
+  const handleClose = () => {
+    navigate(-1);
+  };
+  const gotodocumentstoragepage = () => {
+    navigate("/DocumentStorage");
+  };
+  const renderContent = () => {
+    switch (activeButton) {
+      case "계좌":
+        return (
+          <>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/checkbox_menu.svg" alt="입금 지불 확인" />
+                </Menuicon>
+                <BoxTitle>입금 지불 확인</BoxTitle>
+              </WhiteBoxContent>
+              <Line />
+              <Notification>알림</Notification>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/wonicon_menu.svg" alt="계좌 전액 확인" />
+                </Menuicon>
+                <BoxTitle>계좌 전액 확인</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/shoppingicon_menu.svg" alt="부가 상품 추천" />
+                </Menuicon>
+                <BoxTitle>부가 상품 추천</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+          </>
+        );
+      case "근로":
+        return (
+          <>
+            <WhiteBox>
+              <WhiteBoxContent onClick={gotodocumentstoragepage}>
+                <Menuicon>
+                  <img src="../images/documenticon.svg" alt="내 서류 보관함" />
+                </Menuicon>
+                <BoxTitle>내 서류 보관함</BoxTitle>
+              </WhiteBoxContent>
+              <Line />
+              <Notification>변경 사항 알림</Notification>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/workmanicon.svg" alt="근무 내역 확인하기" />
+                </Menuicon>
+                <BoxTitle>근무 내역 확인하기</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/shoppingicon_menu.svg" alt="부가 상품 추천" />
+                </Menuicon>
+                <BoxTitle>부가 상품 추천</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+          </>
+        );
+      case "커뮤니티":
+        return (
+          <>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/communityicon.svg" alt="커뮤니티 메뉴 1" />
+                </Menuicon>
+                <BoxTitle>커뮤니티 이용하기</BoxTitle>
+              </WhiteBoxContent>
+              <Line />
+              <Notification>커뮤니티 알림</Notification>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/schoolicon.svg" alt="커뮤니티 메뉴 2" />
+                </Menuicon>
+                <BoxTitle>우리학교 바로 들어가기</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/chaticon.svg" alt="커뮤니티 메뉴 3" />
+                </Menuicon>
+                <BoxTitle>채팅</BoxTitle>
+              </WhiteBoxContent>
+            </WhiteBox>
+          </>
+        );
+      case "간편 신고 챗봇":
+        return (
+          <>
+            <WhiteBox>
+              <WhiteBoxContent>
+                <Menuicon>
+                  <img src="../images/chatboticon_menu.svg" alt="신고 메뉴 1" />
+                </Menuicon>
+                <BoxTitle>챗봇으로 간편 신고하기</BoxTitle>
+              </WhiteBoxContent>
+              <Line />
+              <Notification>이전 챗 알림</Notification>
+            </WhiteBox>
+            
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+  return (
+    <Container>
+      <Nav />
+      <TopPart>
+        <CloseBtn onClick={handleClose}>
+          <img src="../images/x.svg" alt="닫기" />
+        </CloseBtn>
+        <MenuTitle>메뉴</MenuTitle>
+        <SettingIcon>
+          <img src="../images/setting.svg" alt="설정" />
+        </SettingIcon>
+      </TopPart>
+      <NamePart>
+        <PersonIcon>
+          <img src="../images/MY.svg" alt="마이 아이콘" />
+        </PersonIcon>
+        <PersonNameTxt>HappyHana 님</PersonNameTxt>
+      </NamePart>
+      <FindPart>
+        <FindIcon>
+          <img src="../images/find.svg" alt="검색 아이콘" />
+        </FindIcon>
+        <FindMent>궁금한 것을 검색해 보세요</FindMent>
+        <FindBtn>
+          <img src="../images/findbtn.svg" alt="검색 버튼" />
+        </FindBtn>
+      </FindPart>
+      <FindunderLine />
+      <MenuListPart>
         <ButtonContainer>
           <Button
             active={activeButton === "계좌"}
@@ -222,38 +333,11 @@ const MenuPage = () => {
             간편 신고 챗봇
           </Button>
         </ButtonContainer>
-        </ MenuListPart>
-        <MainListPart>
-        <WhiteBox>
-            <WhiteBoxContent>
-                <Menuicon>
-                    <img src="../images/checkbox_menu.svg" />
-                </Menuicon>
-            <BoxTitle>입금 지불 확인</BoxTitle>
-            </WhiteBoxContent>
-          <Line />
-          <Notification>알림</Notification>
-        </WhiteBox>
-        <WhiteBox>
-        <WhiteBoxContent>
-            <Menuicon>
-                <img src="../images/wonicon_menu.svg" />
-            </Menuicon>
-            <BoxTitle>계좌 전액 확인</BoxTitle>
-        </WhiteBoxContent>
-        </WhiteBox>
-        <WhiteBox>
-        <WhiteBoxContent>
-            <Menuicon>
-                <img src="../images/shoppingicon_menu.svg" />
-            </Menuicon>
-            <BoxTitle>부가 상품 추천</BoxTitle>
-        </WhiteBoxContent>
-        </WhiteBox>
-      </MainListPart>
-        <MenuBar />
-      </Container>
-    );
-  };
-  
-  export default MenuPage;
+      </MenuListPart>
+      <MainListPart>{renderContent()}</MainListPart>
+      <MenuBar />
+    </Container>
+  );
+};
+
+export default MenuPage;
