@@ -9,7 +9,7 @@ const NavBar = styled.div`
   height: 61px;
   display: flex;
   align-items: center;
-  padding: 0 10px; 
+  padding: 0 23px; 
 `;
 const Backicon = styled.span`
   cursor : pointer;
