@@ -1,8 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import MenuBar from "./MenuBar";
-import Nav from "./NavBar";
 import { useNavigate } from "react-router-dom";
+import CommunityNav from "./CommunityNav"
 
 const Container = styled.div`
   position: relative;
@@ -83,7 +83,7 @@ const Community = () => {
 
   return (
     <Container>
-      <Nav></Nav>
+      <CommunityNav></CommunityNav>
       <MeetingSec>
         <MeetingHeader>
           <MeetingTitle>경희대학교</MeetingTitle>
@@ -95,6 +95,14 @@ const Community = () => {
             />
           </MeetingSearch>
         </MeetingHeader>
+        <MeetingList>
+        {meetings.map(meeting => (
+        <div key={meeting.id}>
+          <img src={meeting.image} alt={meeting.title} />
+          <h3>{meeting.title}</h3>
+        </div>
+      ))}
+          </MeetingList>
       </MeetingSec>
       <FavoriteSec>
         <FavoriteHeader>

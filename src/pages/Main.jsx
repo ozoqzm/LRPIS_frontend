@@ -298,7 +298,7 @@ const Main = () => {
   };
   // 구인구직 페이지로 이동
   const gotoJobSearch = () => {
-    navigate("/jobsearch");
+    navigate("/recommendpage");
   };
   // 챗봇 이동
   const gotoChatbot = () => {
