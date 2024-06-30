@@ -2,13 +2,20 @@ import React from "react";
 import { styled } from "styled-components";
 import MenuBar from "./MenuBar";
 import Nav from "./NavBar";
+import AccountBtn from "./AccountBtn";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
-  height: 1241px;
   background: var(--Gray-Mobileregular, #f6f7f9);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 const Banner = styled.div`
   position: relative;
@@ -26,7 +33,6 @@ const Banner = styled.div`
   font-weight: 500;
   line-height: normal;
   align-items: center;
-
   #card {
     margin-left: 15px;
   }
@@ -37,7 +43,6 @@ const Banner = styled.div`
     margin-left: 60px;
   }
 `;
-
 const DepositNotice = styled.div`
   position: relative;
   margin-top: 25px;
@@ -59,48 +64,6 @@ const DepositNotice = styled.div`
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.36px;
-  }
-`;
-const AccountBtn = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 345px;
-  height: 54px;
-  border-radius: 15px;
-  background: #fff;
-  box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
-  #hana {
-    margin-left: 15px;
-  }
-  #wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    width: 100px;
-  }
-  #owner {
-    color: #474c52;
-    font-family: Inter;
-    font-size: 8px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.16px;
-  }
-  #cash {
-    color: #333;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.3px;
-  }
-  #dot {
-    margin-left: 140px;
   }
 `;
 const Exception = styled.div`
@@ -129,6 +92,17 @@ const Title = styled.div`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.36px;
+  #sub {
+    margin-left: 7px;
+    color: #888;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    text-decoration-line: underline;
+  }
 `;
 const BoardWrapper = styled.div`
   position: relative;
@@ -142,8 +116,8 @@ const BoardWrapper = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none; /* IE, Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 const BoardWrapper2 = styled.div`
   position: relative;
@@ -157,10 +131,13 @@ const BoardWrapper2 = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none; /* IE, Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 const ManageBoard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   width: 180px;
   height: 195px;
@@ -171,10 +148,21 @@ const ManageBoard = styled.div`
   & + & {
     margin-left: 20px;
   }
+  #worklogo {
+    margin-top: 20px;
+  }
+  span {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
 `;
 const JobBoard = styled.div`
   position: relative;
-  width: 240px;
+  padding-left: 20px;
+  width: 235px;
   height: 150px;
   border-radius: 15px;
   background: #fff;
@@ -183,18 +171,56 @@ const JobBoard = styled.div`
   & + & {
     margin-left: 20px;
   }
-
   #location {
+    margin-top: 10px;
+    color: #888;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
   }
-
   #thumbnail {
+    margin-top: 10px;
     width: 210px;
     height: 62px;
     border-radius: 15px;
   }
   #content {
+    margin-top: 5px;
+    color: #333;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.24px;
   }
   #salary {
+    color: #888;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.2px;
+  }
+  #dday {
+    position: absolute;
+    margin-left: 170px;
+    bottom: 122px;
+    width: 37px;
+    height: 16px;
+    border-radius: 3px;
+    background: #888;
+    color: #fff;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
   }
 `;
 const Btn = styled.div`
@@ -209,7 +235,6 @@ const Btn = styled.div`
   border-radius: 15px;
   background: #fff;
   box-shadow: 0px 0px 3.3px 4px rgba(0, 0, 0, 0.05);
-
   #icon {
     margin-left: 10px;
   }
@@ -240,9 +265,16 @@ const Btn = styled.div`
     margin-left: 300px;
   }
 `;
+const FloatBtn = styled.div`
+  position: fixed;
+  margin-left: 330px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+`;
 const Footer = styled.div`
-  position: absolute;
-  bottom: 0px;
+  position: relative;
+  margin-top: 30px;
   width: 390px;
   height: 160px;
   background: #eff0f4;
@@ -258,6 +290,25 @@ const Footer = styled.div`
 `;
 
 const Main = () => {
+  const navigate = useNavigate();
+
+  // 커뮤니티 페이지로 이동
+  const gotoComm = () => {
+    navigate("/community");
+  };
+  // 구인구직 페이지로 이동
+  const gotoJobSearch = () => {
+    navigate("/jobsearch");
+  };
+  // 챗봇 이동
+  const gotoChatbot = () => {
+    navigate("/chatbot");
+  };
+
+  // 근무지 추가로 이동
+  const gotoAddJob = () => {
+    navigate("/addjob");
+  };
   return (
     <Container>
       <Nav></Nav>
@@ -279,22 +330,7 @@ const Main = () => {
         <div id="nickname">HappyHana님,</div>
         <div id="content">6월 10일 1,000,000원 입금 예정입니다</div>
       </DepositNotice>
-      <AccountBtn>
-        <img
-          src={`${process.env.PUBLIC_URL}/images/hanalogo.svg`}
-          width="20px"
-          id="hana"
-        />
-        <span id="wrapper">
-          <span id="owner">HappyHana의 통장</span>
-          <span id="cash">285,687원</span>
-        </span>
-        <img
-          src={`${process.env.PUBLIC_URL}/images/dot.svg`}
-          width="20px"
-          id="dot"
-        />
-      </AccountBtn>
+      <AccountBtn icon={"dot"}></AccountBtn>
       <Exception>월급이 입금되지 않았나요?</Exception>
       <Title>근무지 관리</Title>
       <BoardWrapper>
@@ -304,30 +340,57 @@ const Main = () => {
             width="58px"
             id="worklogo"
           />
+          <span>
+            <img
+              src={`${process.env.PUBLIC_URL}/images/document.svg`}
+              width="58px"
+              id="document"
+            />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/inform.svg`}
+              width="58px"
+              id="info"
+            />
+          </span>
         </ManageBoard>
-        <div style={{ marginLeft: "20px" }}>
+        <div style={{ marginLeft: "20px" }} onClick={gotoAddJob}>
           <img
             src={`${process.env.PUBLIC_URL}/images/addwork.svg`}
             height="196px"
           />
         </div>
       </BoardWrapper>
-      <Title>유학생 추천 구인구직</Title>
+      <Title onClick={gotoJobSearch}>
+        유학생 추천 구인구직
+        <span id="sub">더보기</span>
+      </Title>
       <BoardWrapper2>
         <JobBoard>
+          <div id="location">서울시 동대문구</div>
+          <div id="dday">D-10</div>
           <img
             src={`${process.env.PUBLIC_URL}/images/sample1.svg`}
             id="thumbnail"
           />
+          <div id="content">랭스터디카페 야간 직원 1명 찾습니다</div>
+          <div id="salary">시급: 10,000원</div>
         </JobBoard>
+
         <JobBoard>
+          <div id="location">서울시 동대문구</div>
+          <div id="dday">D-10</div>
           <img
             src={`${process.env.PUBLIC_URL}/images/sample2.svg`}
             id="thumbnail"
           />
+          <div id="content">랭스터디카페 야간 직원 1명 찾습니다</div>
+          <div id="salary">시급: 10,000원</div>
         </JobBoard>
       </BoardWrapper2>
-      <Title>커뮤니티</Title>
+      <Title onClick={gotoComm}>
+        커뮤니티
+        <span id="sub">경희대학교</span>
+      </Title>
       <Btn>
         <img
           src={`${process.env.PUBLIC_URL}/images/vietnam.svg`}
@@ -352,6 +415,17 @@ const Main = () => {
         />
       </Btn>
       <Footer>개인정보처리방침</Footer>
+      <FloatBtn>
+        <img
+          onClick={gotoChatbot}
+          src={`${process.env.PUBLIC_URL}/images/sangdam.svg`}
+          width="56px"
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/floatbtn2.svg`}
+          width="56px"
+        />
+      </FloatBtn>
       <MenuBar></MenuBar>
     </Container>
   );

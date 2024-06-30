@@ -1,9 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
-  position: absolute;
-  bottom: 0px;
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -11,19 +12,32 @@ const Container = styled.div`
   height: 62px;
   background: #fff;
 `;
-const Btn = styled.div``;
+const Btn = styled.div`
+  cursor : pointer;
+`;
 
 const MenuBar = () => {
+  const navigate = useNavigate();
+  // 메뉴페이지로 이동
+  const gotoMenu = () => {
+    navigate("/menupage");
+  };
+  const gotoMain = () => {
+    navigate("/");
+  };
+  const gotoRecommend = () => {
+    navigate("/recommendpage");
+  };
   return (
     <Container>
-      <Btn>
+      <Btn onClick={gotoMain}>
         <img
           src={`${process.env.PUBLIC_URL}/images/home.svg`}
           alt="logo"
           width="20.5px"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={gotoRecommend}>
         <img
           src={`${process.env.PUBLIC_URL}/images/product.svg`}
           alt="logo"
@@ -44,7 +58,7 @@ const MenuBar = () => {
           width="22px"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={gotoMenu}>
         <img
           src={`${process.env.PUBLIC_URL}/images/menu.svg`}
           alt="logo"
