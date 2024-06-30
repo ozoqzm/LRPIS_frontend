@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import MenuPage from "./MenuPage";
 
 const Container = styled.div`
   position: absolute;
@@ -11,7 +12,9 @@ const Container = styled.div`
   height: 62px;
   background: #fff;
 `;
-const Btn = styled.div``;
+const Btn = styled.div`
+  cursor : pointer;
+`;
 
 const MenuBar = () => {
   return (
@@ -49,6 +52,7 @@ const MenuBar = () => {
           src={`${process.env.PUBLIC_URL}/images/menu.svg`}
           alt="logo"
           width="22px"
+          onClick={MenuPage}
         />
       </Btn>
     </Container>
