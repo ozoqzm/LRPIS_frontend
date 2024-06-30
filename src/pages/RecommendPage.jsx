@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { styled } from "styled-components";
 import MenuBar from "./MenuBar";
 import Nav from "./NavBar";
-import { useNavigate } from "react-router-dom";
+
 
 const Container = styled.div`
   position: relative;
