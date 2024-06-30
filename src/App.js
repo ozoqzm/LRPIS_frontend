@@ -4,6 +4,7 @@ import MenuPage from "./pages/MenuPage";
 import DepositCompleted from "./pages/DepositCompleted";
 import Community from "./pages/Community";
 import RecommendPage from "./pages/RecommendPage";
+import DocumentStorage from "./pages/DocumentStorage";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         {/* 팝업창! 필요없으면 삭제 */}
         {/* <Route path="/completed" element={<DepositCompleted />} /> */}
         <Route path="/recommendpage" element={<RecommendPage />} />
+        <Route path="/documentstorage" element={<DocumentStorage />} />
       </Routes>
     </BrowserRouter>
   );
