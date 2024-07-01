@@ -4,30 +4,27 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = styled.div`
   position: relative;
-  margin: 0 auto;
-  width: 370px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding: 0 10px; 
+    margin: 0 auto;
+    width: 390px;
+    box-sizing: border-box;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    padding: 0 23px;
 `;
 const Backicon = styled.span`
-  margin-top: 10px;
   cursor : pointer;
 `;
 const PageTitle = styled.div`
-  width : 180px;
-  color: var(--Green, #089995);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.32px;
-  text-align: center;
-
-  margin-top : 8px;
-
+    color: var(--Green, #089995);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    text-align: left;
+    padding-left: 14px;
 `;
 const Icon = styled.span`
 `;
@@ -42,20 +39,21 @@ const Language = styled.span`
   line-height: 1;
 `;
 const IconWrapper = styled.div`
-  width: 60px;
-  display: flex;
-  justify-content: space-between;
-  margin-left : 55px;
-  margin-top : 10px;
+      position: absolute;
+    right: 23px;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
 `;
 const LanWrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap : 3px;
-  margin-top : 10px;
+      display: flex;
+    justify-content: space-evenly;
+    gap: 3px;
+    align-items: center;
+    position: absolute;
+    right: 97px;
 `;
-const RecommendNav = () => {
+const AccountNav = () => {
   const navigate = useNavigate();
   return (
     <div>
@@ -64,7 +62,7 @@ const RecommendNav = () => {
           <img src="../images/backicon.svg" alt="Back" />
         </Backicon>
         <PageTitle>
-          유학생 추천 구인구직
+          계좌 전액 확인
         </PageTitle>
         <LanWrapper>
           <Icon>
@@ -86,10 +84,11 @@ const RecommendNav = () => {
               width="12px"
             />
           </Icon>
-          <Icon onClick={() => navigate("/ing")}>
+          <Icon>
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
               width="15px"
+              onClick={() => navigate("/ing")}
             />
           </Icon>
           <Icon>
@@ -106,4 +105,4 @@ const RecommendNav = () => {
   );
 };
 
-export default RecommendNav;
+export default AccountNav;

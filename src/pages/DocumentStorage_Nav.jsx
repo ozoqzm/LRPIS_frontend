@@ -83,7 +83,7 @@ const RecommendNav = () => {
           <img src={`${process.env.PUBLIC_URL}/images/profile.svg`} width="15px" alt="Profile" />
         </Icon>
         <Icon>
-          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" />
+          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" onClick={() => navigate("/menupage")} />
         </Icon>
       </IconWrapper>
     </NavBar>

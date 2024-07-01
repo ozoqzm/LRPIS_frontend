@@ -88,12 +88,14 @@ const CommunityNav = () => {
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
               width="15px"
+              onClick={() => navigate("/ing")}
             />
           </Icon>
           <Icon>
             <img
               src={`${process.env.PUBLIC_URL}/images/side.svg`}
               width="11.5px"
+              onClick={() => navigate("/menupage")} 
             />
           </Icon>
         </IconWrapper>

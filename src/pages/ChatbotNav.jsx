@@ -80,10 +80,10 @@ const ChatbotNav = () => {
           <img src={`${process.env.PUBLIC_URL}/images/notice.svg`} width="12px" alt="Notice" />
         </Icon>
         <Icon>
-          <img src={`${process.env.PUBLIC_URL}/images/profile.svg`} width="15px" alt="Profile" />
+          <img src={`${process.env.PUBLIC_URL}/images/profile.svg`} width="15px" alt="Profile" onClick={() => navigate("/ing")}></img>
         </Icon>
         <Icon>
-          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" />
+          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" onClick={() => navigate("/menupage")} />
         </Icon>
       </IconWrapper>
     </NavBar>

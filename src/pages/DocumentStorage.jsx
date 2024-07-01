@@ -8,6 +8,7 @@ const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
+  height: 800px;
   background: var(--Gray-Mobileregular, #f6f7f9);
    overflow-y: scroll;
   ::-webkit-scrollbar {
@@ -118,7 +119,7 @@ const DoculmentStorage = () => {
         {documents.map((document, index) => (
           <WhiteBox
             key={index}
-            onClick={document.text === "표준 근로계약서 사본" ? gotoEmploymentContract : null}
+            onClick={gotoEmploymentContract}
           >
             <DocumentImage src={document.img} alt={`Document ${index + 1}`} />
             {document.text}

@@ -3,11 +3,12 @@ import styled from "styled-components";
 import MenuBar from "./MenuBar";
 import RecommendNav from "./RecommendNav";
 
+import { useNavigate } from "react-router-dom";
+
 const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
-  height: 800px;
   background: var(--Gray-Mobileregular, #f6f7f9);
 `;
 
@@ -57,21 +58,9 @@ const Highlight = styled.span`
 `;
 
 const BoardWrapper2 = styled.div`
-  position: relative;
-  padding: 5px;
-  margin: auto;
-  margin-top: 10px;
   display: flex;
   flex-direction: column; /* 세로 정렬을 위해 flex-direction 추가 */
   align-items: center; /* 가운데 정렬 */
-  width: 360px;
-  height: 500px; /* 높이를 조정하여 화면에 모두 나타날 수 있도록 */
-  overflow-y: auto; /* 필요에 따라 세로 스크롤 추가 */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;
 
 const JobBoard = styled.div`
@@ -154,9 +143,37 @@ const JobBoard = styled.div`
     text-align: center;
   }
 `;
+const Another = styled.div`
+  font-size: 60px;
+  margin: 0 auto;
+  text-align: center;
+  margin: -34px;
+  padding-bottom: 20px;
+  color: #D9D9D9;
+`;
+const Footer = styled.div`
+  position: relative;
+  margin-top: 30px;
+  width: 390px;
+  height: 160px;
+  background: #eff0f4;
+  color: #888;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10;
+  letter-spacing: -0.2px;
+  text-decoration-line: underline;
+`;
+
+
 const RecommendPage = () => {
   const [region, setRegion] = useState("동대문구 전체");
   const [job, setJob] = useState("전체 업종");
+  
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -191,7 +208,7 @@ const RecommendPage = () => {
       <Contenttxt>
         총 <Highlight>63</Highlight>건의 추천 구직 정보가 있어요
       </Contenttxt>
-      <BoardWrapper2>
+      <BoardWrapper2 onClick={() => navigate("/ing")}>
         <JobBoard>
           <div id="location">서울시 동대문구</div>
           <div id="dday">D-10</div>
@@ -249,6 +266,9 @@ const RecommendPage = () => {
           <div id="day">어제</div>
         </JobBoard>
       </BoardWrapper2>
+      
+      <Another>...</Another>
+      <Footer>개인정보처리방침</Footer>
       <MenuBar />
     </Container>
   );

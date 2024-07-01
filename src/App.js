@@ -7,6 +7,8 @@ import RecommendPage from "./pages/RecommendPage";
 import DocumentStorage from "./pages/DocumentStorage";
 import EmploymentContract from "./pages/EmploymentContract";
 import Chatbot from "./pages/Chatbot";
+import Account from "./pages/Account"
+import Ing from "./pages/ComingSoon"
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/documentstorage" element={<DocumentStorage />} />
         <Route path="/employmentcontract" element={<EmploymentContract />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/ing" element={<Ing />} />
       </Routes>
     </BrowserRouter>
   );
