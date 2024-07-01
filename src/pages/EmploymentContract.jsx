@@ -52,7 +52,6 @@ const Text = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
-  font-family: Inter;
   font-size: 12px;
   font-weight: 700;
   line-height: normal;
@@ -73,7 +72,6 @@ const DetailButton = styled.button`
   height: 39px;
   color: #fff;
   text-align: center;
-  font-family: Inter;
   font-size: 12px;
   font-weight: 700;
   line-height: normal;

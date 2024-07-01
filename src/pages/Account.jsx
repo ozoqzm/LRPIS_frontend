@@ -35,7 +35,6 @@ const AccountBox = styled.div`
 
   #name {
     color: #000;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -44,7 +43,6 @@ const AccountBox = styled.div`
 
   #num {
     color: #000;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -53,7 +51,6 @@ const AccountBox = styled.div`
 
   #balance {
     color: #000;
-    font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -81,7 +78,6 @@ const TranSec = styled.div`
 const TranHeader = styled.div`
   height: 40px;
   color: #000;
-  font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -106,7 +102,6 @@ const TranItem = styled.div`
 
   #time {
     color: #000;
-    font-family: Inter;
     font-size: 11px;
     font-style: normal;
     font-weight: 400;
@@ -116,7 +111,6 @@ const TranItem = styled.div`
 
   #name {
     color: #000;
-    font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -126,8 +120,7 @@ const TranItem = styled.div`
 
   #price {
     color: ${(props) =>
-      props.isGrey ? "#089995" : "#000"}; /* Conditional color */
-    font-family: Inter;
+      props.isGrey ? "#089995" : "#000"};
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
@@ -140,7 +133,6 @@ const TranItem = styled.div`
 
   #balance {
     color: #000;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -169,7 +161,6 @@ const Footer = styled.div`
   background: #eff0f4;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;

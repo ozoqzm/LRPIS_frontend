@@ -37,7 +37,6 @@ const TopGrayBox = styled.div`
 
 const TopBoxtxt = styled.div`
   color: var(---Black, #333);
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
@@ -70,7 +69,6 @@ const WhiteBox = styled.div`
   justify-content: center;
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: Inter;
   font-size: 12px;
   text-align: center;
   padding: 10px;

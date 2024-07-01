@@ -23,12 +23,10 @@ const WhiteBox = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display : flex;
+  display: flex;
 `;
 
-const Locationicon = styled.div`
-
-`;
+const Locationicon = styled.div``;
 
 const Divider = styled.div`
   height: 28px;
@@ -43,14 +41,13 @@ const Select = styled.select`
 `;
 const Contenttxt = styled.span`
   color: #000;
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.26px;
-  padding : 20px;
-  margin-left : 10px;
+  padding: 20px;
+  margin-left: 10px;
 `;
 
 const Highlight = styled.span`
@@ -84,7 +81,6 @@ const JobBoard = styled.div`
   #location {
     margin-top: 10px;
     color: #888;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -96,12 +92,11 @@ const JobBoard = styled.div`
     width: 210px;
     height: 62px;
     border-radius: 15px;
-    margin-left : 30px;
+    margin-left: 30px;
   }
   #content {
     margin-top: 5px;
     color: #333;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -110,16 +105,14 @@ const JobBoard = styled.div`
   }
   #salary {
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     letter-spacing: -0.2px;
   }
-    #day {
+  #day {
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
@@ -135,7 +128,6 @@ const JobBoard = styled.div`
     border-radius: 3px;
     background: #888;
     color: #fff;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -149,7 +141,7 @@ const Another = styled.div`
   text-align: center;
   margin: -34px;
   padding-bottom: 20px;
-  color: #D9D9D9;
+  color: #d9d9d9;
 `;
 const Footer = styled.div`
   position: relative;
@@ -159,7 +151,6 @@ const Footer = styled.div`
   background: #eff0f4;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -168,11 +159,10 @@ const Footer = styled.div`
   text-decoration-line: underline;
 `;
 
-
 const RecommendPage = () => {
   const [region, setRegion] = useState("동대문구 전체");
   const [job, setJob] = useState("전체 업종");
-  
+
   const navigate = useNavigate();
 
   return (
@@ -180,7 +170,7 @@ const RecommendPage = () => {
       <RecommendNav />
       <WhiteBox>
         <Locationicon>
-            <img src="../images/location.svg" />
+          <img src="../images/location.svg" />
         </Locationicon>
         <Select value={region} onChange={(e) => setRegion(e.target.value)}>
           <option value="동대문구 전체">동대문구 전체</option>
@@ -266,7 +256,7 @@ const RecommendPage = () => {
           <div id="day">어제</div>
         </JobBoard>
       </BoardWrapper2>
-      
+
       <Another>...</Another>
       <Footer>개인정보처리방침</Footer>
       <MenuBar />

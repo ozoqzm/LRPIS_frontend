@@ -175,7 +175,6 @@ const ListItem = styled.div`
   h4 {
     margin: 0;
     color: var(---Black, #333);
-    font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 300;
@@ -200,7 +199,6 @@ const Footer = styled.div`
   background: #eff0f4;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
