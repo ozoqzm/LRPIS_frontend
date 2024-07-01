@@ -17,7 +17,6 @@ const Logo = styled.span`
 const Icon = styled.span``;
 const Language = styled.span`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -52,7 +51,7 @@ const Nav = () => {
         <IconWrapper>
           <Logo onClick={() => navigate("/")}>
             <img
-              src={`${process.env.PUBLIC_URL}/images/lrpislogo.svg`}
+              src={`${process.env.PUBLIC_URL}/images/lrpislogo.png`}
               alt="logo"
               width="45px"
             />
@@ -88,7 +87,7 @@ const Nav = () => {
             <img
               src={`${process.env.PUBLIC_URL}/images/side.svg`}
               width="11.5px"
-              onClick={() => navigate("/menupage")} 
+              onClick={() => navigate("/menupage")}
             />
           </Icon>
         </IconWrapper2>

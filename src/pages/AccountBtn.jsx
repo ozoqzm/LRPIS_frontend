@@ -24,7 +24,6 @@ const Btn = styled.div`
   }
   #owner {
     color: #474c52;
-    font-family: Inter;
     font-size: 8px;
     font-style: normal;
     font-weight: 400;
@@ -33,7 +32,6 @@ const Btn = styled.div`
   }
   #cash {
     color: #333;
-    font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 700;

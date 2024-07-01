@@ -25,7 +25,6 @@ const CloseBtn = styled.div`
 
 const MenuTitle = styled.div`
   color: var(--Black, #333);
-  font-family: Inter;
   font-size: 18px;
   font-weight: 500;
 `;
@@ -46,7 +45,6 @@ const PersonIcon = styled.div``;
 const PersonNameTxt = styled.div`
   margin-left: 10px;
   color: #333;
-  font-family: Inter;
   font-size: 18px;
   font-weight: 700;
 `;
@@ -64,7 +62,6 @@ const FindIcon = styled.div`
 
 const FindMent = styled.div`
   color: var(--gray-m-gray-4, #929292);
-  font-family: Inter;
   font-size: 17px;
   font-weight: 500;
   margin-left: 20px;

@@ -18,7 +18,6 @@ const Backicon = styled.span`
 const PageTitle = styled.div`
   width : 180px;
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -33,7 +32,6 @@ const Icon = styled.span`
 `;
 const Language = styled.span`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;

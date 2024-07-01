@@ -27,7 +27,6 @@ const Banner = styled.div`
   border-radius: 15px;
   background: #ecedf1;
   color: #393939;
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -49,7 +48,6 @@ const DepositNotice = styled.div`
   margin-left: 30px;
   #nickname {
     color: #474c52;
-    font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -58,7 +56,6 @@ const DepositNotice = styled.div`
   }
   #content {
     color: #333;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -73,7 +70,6 @@ const Exception = styled.div`
   margin-bottom: 30px;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -86,7 +82,6 @@ const Title = styled.div`
   margin-top: 15px;
   margin-left: 30px;
   color: #333;
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -95,7 +90,6 @@ const Title = styled.div`
   #sub {
     margin-left: 7px;
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -174,7 +168,6 @@ const JobBoard = styled.div`
   #location {
     margin-top: 10px;
     color: #888;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -190,7 +183,6 @@ const JobBoard = styled.div`
   #content {
     margin-top: 5px;
     color: #333;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -199,7 +191,6 @@ const JobBoard = styled.div`
   }
   #salary {
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
@@ -215,7 +206,6 @@ const JobBoard = styled.div`
     border-radius: 3px;
     background: #888;
     color: #fff;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -242,7 +232,6 @@ const Btn = styled.div`
     position: absolute;
     left: 40px;
     color: #333;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -253,7 +242,6 @@ const Btn = styled.div`
     position: absolute;
     left: 180px;
     color: #888;
-    font-family: Inter;
     font-size: 8px;
     font-style: normal;
     font-weight: 300;
@@ -280,7 +268,6 @@ const Footer = styled.div`
   background: #eff0f4;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -319,7 +306,7 @@ const Main = () => {
           alt="card"
           id="card"
         />
-        <span id="text" >나에게 딱 맞는 유학생 전용 신용카드?</span>
+        <span id="text">나에게 딱 맞는 유학생 전용 신용카드?</span>
         <img
           src={`${process.env.PUBLIC_URL}/images/right.svg`}
           width="8px"
@@ -330,8 +317,13 @@ const Main = () => {
         <div id="nickname">HappyHana님,</div>
         <div id="content">6월 10일 1,000,000원 입금 예정입니다</div>
       </DepositNotice>
-      <AccountBtn icon={"dot"} onClick={() => navigate("/account")}></AccountBtn>
-      <Exception onClick={() => navigate("/chatbot")}>월급이 입금되지 않았나요?</Exception>
+      <AccountBtn
+        icon={"dot"}
+        onClick={() => navigate("/account")}
+      ></AccountBtn>
+      <Exception onClick={() => navigate("/chatbot")}>
+        월급이 입금되지 않았나요?
+      </Exception>
       <Title>근무지 관리</Title>
       <BoardWrapper>
         <ManageBoard onClick={() => navigate("/documentstorage")}>
@@ -418,7 +410,7 @@ const Main = () => {
       <FloatBtn>
         <img
           onClick={gotoChatbot}
-          src={`${process.env.PUBLIC_URL}/images/sangdam.svg`}
+          src={`${process.env.PUBLIC_URL}/images/sangdam.png`}
           width="56px"
         />
         <img
