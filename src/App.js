@@ -6,6 +6,8 @@ import Community from "./pages/Community";
 import RecommendPage from "./pages/RecommendPage";
 import DocumentStorage from "./pages/DocumentStorage";
 import EmploymentContract from "./pages/EmploymentContract";
+import Chatbot from "./pages/Chatbot";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,7 @@ function App() {
         <Route path="/recommendpage" element={<RecommendPage />} />
         <Route path="/documentstorage" element={<DocumentStorage />} />
         <Route path="/employmentcontract" element={<EmploymentContract />} />
+        <Route path="/chatbot" element={<Chatbot />} />
       </Routes>
     </BrowserRouter>
   );
