@@ -5,6 +5,7 @@ import DepositCompleted from "./pages/DepositCompleted";
 import Community from "./pages/Community";
 import RecommendPage from "./pages/RecommendPage";
 import DocumentStorage from "./pages/DocumentStorage";
+import EmploymentContract from "./pages/EmploymentContract";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
         {/* <Route path="/completed" element={<DepositCompleted />} /> */}
         <Route path="/recommendpage" element={<RecommendPage />} />
         <Route path="/documentstorage" element={<DocumentStorage />} />
+        <Route path="/employmentcontract" element={<EmploymentContract />} />
       </Routes>
     </BrowserRouter>
   );
