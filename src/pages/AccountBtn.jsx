@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Btn = styled.div`
   position: relative;
@@ -43,26 +44,12 @@ const Btn = styled.div`
     margin-left: 140px;
   }
 `;
-const Footer = styled.div`
-  position: relative;
-  margin-top: 30px;
-  width: 390px;
-  height: 160px;
-  background: #eff0f4;
-  color: #888;
-  text-align: center;
-  font-family: Inter;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 10;
-  letter-spacing: -0.2px;
-  text-decoration-line: underline;
-`;
+
 
 const AccountBtn = ({ icon }) => {
+  const navigate = useNavigate();
   return (
-    <Btn>
+    <Btn onClick={() => navigate("/account")}>
       <img
         src={`${process.env.PUBLIC_URL}/images/hanalogo.svg`}
         width="20px"

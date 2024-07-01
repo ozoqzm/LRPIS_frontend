@@ -253,9 +253,6 @@ const Community = () => {
 
   const filteredListContents = selectedCategory === "all" ? dummyListContents : dummyListContents.filter(item => item.category === selectedCategory);
 
-  const navigateToWritePost = () => {
-    navigate('/write-post');
-  };
 
   return (
     <Container>
@@ -263,7 +260,7 @@ const Community = () => {
       <MeetingSec>
         <MeetingHeader>
           <MeetingTitle>경희대학교</MeetingTitle>
-          <MeetingSearch>
+          <MeetingSearch onClick={() => navigate("/ing")}>
             <img
               src={`${process.env.PUBLIC_URL}/images/search.svg`}
               width="17px"
@@ -272,7 +269,7 @@ const Community = () => {
             />
           </MeetingSearch>
         </MeetingHeader>
-        <MeetingList>
+        <MeetingList onClick={() => navigate("/ing")}>
           {meetings.map(meeting => (
             <MeetingItem key={meeting.id}>
               <img src={meeting.image} alt={meeting.title} />
@@ -292,7 +289,7 @@ const Community = () => {
           <FavoriteTitle>즐겨찾기</FavoriteTitle>
         </FavoriteHeader>
         <FavoriteList>
-          <FavoriteItem>
+          <FavoriteItem onClick={() => navigate("/ing")}>
             <div id="flag">
               <img
                 src={`${process.env.PUBLIC_URL}/images/vietnam.svg`}
@@ -310,7 +307,7 @@ const Community = () => {
               />
             </div>
           </FavoriteItem>
-          <FavoriteItem>
+          <FavoriteItem onClick={() => navigate("/ing")}>
             <div id="flag">
               <FavoriteConTitle>인기게시판</FavoriteConTitle>
               <FavoriteCon>What should I do when my bos...</FavoriteCon>
@@ -339,7 +336,7 @@ const Community = () => {
         </ListHeader>
         <List>
           {filteredListContents.map(content => (
-            <ListItem key={content.id}>
+            <ListItem key={content.id} onClick={() => navigate("/ing")}>
               <h4>{content.title}</h4>
               <p>{content.category} · 조회 {content.views}</p>
             </ListItem>
@@ -348,7 +345,7 @@ const Community = () => {
       </ListSec>
       <Footer>개인정보처리방침</Footer>
       <MenuBar />
-      <WritePostButton onClick={navigateToWritePost}>+ 글쓰기</WritePostButton>
+      <WritePostButton onClick={() => navigate("/ing")}>+ 글쓰기</WritePostButton>
     </Container>
   );
 };

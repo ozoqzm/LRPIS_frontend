@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = styled.div`
   position: relative;
@@ -44,18 +45,19 @@ const LanWrapper = styled.div`
 `;
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <NavBar>
         <IconWrapper>
-          <Logo>
+          <Logo onClick={() => navigate("/")}>
             <img
               src={`${process.env.PUBLIC_URL}/images/lrpislogo.svg`}
               alt="logo"
               width="45px"
             />
           </Logo>
-          <LanWrapper>
+          <LanWrapper onClick={() => navigate("/ing")}>
             <Icon>
               <img
                 src={`${process.env.PUBLIC_URL}/images/language.svg`}
@@ -76,7 +78,7 @@ const Nav = () => {
               width="12px"
             />
           </Icon>
-          <Icon>
+          <Icon onClick={() => navigate("/ing")}>
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
               width="15px"
@@ -86,6 +88,7 @@ const Nav = () => {
             <img
               src={`${process.env.PUBLIC_URL}/images/side.svg`}
               width="11.5px"
+              onClick={() => navigate("/menupage")} 
             />
           </Icon>
         </IconWrapper2>

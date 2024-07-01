@@ -319,22 +319,22 @@ const Main = () => {
           alt="card"
           id="card"
         />
-        <span id="text">나에게 딱 맞는 유학생 전용 신용카드?</span>
+        <span id="text" >나에게 딱 맞는 유학생 전용 신용카드?</span>
         <img
           src={`${process.env.PUBLIC_URL}/images/right.svg`}
           width="8px"
           id="right"
         />
       </Banner>
-      <DepositNotice>
+      <DepositNotice onClick={() => navigate("/account")}>
         <div id="nickname">HappyHana님,</div>
         <div id="content">6월 10일 1,000,000원 입금 예정입니다</div>
       </DepositNotice>
-      <AccountBtn icon={"dot"}></AccountBtn>
-      <Exception>월급이 입금되지 않았나요?</Exception>
+      <AccountBtn icon={"dot"} onClick={() => navigate("/account")}></AccountBtn>
+      <Exception onClick={() => navigate("/chatbot")}>월급이 입금되지 않았나요?</Exception>
       <Title>근무지 관리</Title>
       <BoardWrapper>
-        <ManageBoard>
+        <ManageBoard onClick={() => navigate("/documentstorage")}>
           <img
             src={`${process.env.PUBLIC_URL}/images/worklogo.svg`}
             width="58px"
@@ -391,7 +391,7 @@ const Main = () => {
         커뮤니티
         <span id="sub">경희대학교</span>
       </Title>
-      <Btn>
+      <Btn onClick={() => navigate("/community")}>
         <img
           src={`${process.env.PUBLIC_URL}/images/vietnam.svg`}
           width="20px"
@@ -405,7 +405,7 @@ const Main = () => {
           id="nicon"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={() => navigate("/community")}>
         <span id="subtitle">인기게시판</span>
         <span id="detail">What should I do when my bos...</span>
         <img

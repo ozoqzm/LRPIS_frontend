@@ -25,9 +25,6 @@ const MenuBar = () => {
   const gotoMain = () => {
     navigate("/");
   };
-  const gotoRecommend = () => {
-    navigate("/recommendpage");
-  };
   return (
     <Container>
       <Btn onClick={gotoMain}>
@@ -37,21 +34,21 @@ const MenuBar = () => {
           width="20.5px"
         />
       </Btn>
-      <Btn onClick={gotoRecommend}>
+      <Btn onClick={() => navigate("/ing")}>
         <img
           src={`${process.env.PUBLIC_URL}/images/product.svg`}
           alt="logo"
           width="22px"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={() => navigate("/ing")}>
         <img
           src={`${process.env.PUBLIC_URL}/images/asset.svg`}
           alt="logo"
           width="22px"
         />
       </Btn>
-      <Btn>
+      <Btn onClick={() => navigate("/ing")}>
         <img
           src={`${process.env.PUBLIC_URL}/images/stock.svg`}
           alt="logo"
