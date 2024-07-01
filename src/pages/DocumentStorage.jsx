@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MenuBar from "./MenuBar";
 import DocumentStorage_Nav from "./DocumentStorage_Nav";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
@@ -68,7 +69,7 @@ const WhiteBox = styled.div`
   text-align: center;
   padding: 10px;
   border: 1px solid black;
-  cursor : pointer;
+  cursor: pointer;
 `;
 
 const DocumentImage = styled.img`
@@ -78,6 +79,12 @@ const DocumentImage = styled.img`
 `;
 
 const DoculmentStorage = () => {
+  const navigate = useNavigate();
+
+  const gotoEmploymentContract = () => {
+    navigate("/employmentcontract");
+  };
+
   const documents = [
     { text: "고용주 사업자등록증 사본", img: "../images/docstg_1.svg" },
     { text: "시간제 취업 확인서", img: "../images/docstg_2.svg" },
@@ -104,7 +111,10 @@ const DoculmentStorage = () => {
       </TopWrapper>
       <WhiteBoxContainer>
         {documents.map((document, index) => (
-          <WhiteBox key={index}>
+          <WhiteBox
+            key={index}
+            onClick={document.text === "표준 근로계약서 사본" ? gotoEmploymentContract : null}
+          >
             <DocumentImage src={document.img} alt={`Document ${index + 1}`} />
             {document.text}
           </WhiteBox>
