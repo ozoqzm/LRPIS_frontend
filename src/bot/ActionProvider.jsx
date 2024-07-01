@@ -1,33 +1,9 @@
-import React from 'react';
-
-const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  const handleHello = () => {
-    const botMessage = createChatBotMessage('나도 반가웡');
-
-    setState(prev => ({
-      ...prev,
-      messages: [...prev.messages, botMessage]
-    }));
-  };
-
-  const handleUnknownMessage = () => {
-    const botMessage = createChatBotMessage('죄송해요 무슨 말씀이신지 잘 모르겠어요 ㅜㅜ');
-
-    setState(prev => ({
-      ...prev,
-      messages: [...prev.messages, botMessage]
-    }));
-  };
-
-  return (
-    <div>
-      {React.Children.map(children, (child) => {
-        return React.cloneElement(child, {
-          actions: { handleHello, handleUnknownMessage },
-        });
-      })}
-    </div>
-  );
-};
+class ActionProvider {
+  constructor(createChatbotMessage, setStateFunc, createClientMessage) {
+    this.createChatbotMessage = createChatbotMessage;
+    this.setState = setStateFunc;
+    this.createClientMessage = createClientMessage;
+  }
+}
 
 export default ActionProvider;

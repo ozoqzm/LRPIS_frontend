@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { Chatbot } from 'react-chatbot-kit';
 import ChatbotNav from "./ChatbotNav";
 import MenuBar from "./MenuBar";
 
+import { Chatbot } from 'react-chatbot-kit';
 import config from '../bot/config.js';
 import MessageParser from '../bot/MessageParser';
 import ActionProvider from '../bot/ActionProvider';
+
+import "remixicon/fonts/remixicon.css";
+import "react-chatbot-kit/build/main.css";
+import "../bot/chatbot.css"
 
 const Container = styled.div`
   position: relative;
