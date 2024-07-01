@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = styled.div`
   position: relative;
-  margin: 0 auto;
-  width: 370px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding: 0 23px; 
+    margin: 0 auto;
+    width: 390px;
+    box-sizing: border-box;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    padding: 0 23px;
 `;
 const Backicon = styled.span`
   cursor : pointer;

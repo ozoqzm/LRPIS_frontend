@@ -8,8 +8,13 @@ const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
-  height: 800px;
   background: var(--Gray-Mobileregular, #f6f7f9);
+   overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const TopWrapper = styled.div`
