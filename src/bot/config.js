@@ -2,10 +2,12 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import Header from "./ChatbotHeader";
 import ChatMessage from "./ChatMessage";
+import Buttons from './button';
+import MoreButton from './MoreButton';
 
 const config = {
   initialMessages: [
-    createChatBotMessage("안녕하세요! 저는 여러분의 문제를 해결하기 위해 도와드리는 챗봇입니다. 어떻게 도와드릴까요?"),
+    createChatBotMessage("안녕하세요! 저는 여러분의 문제를 해결하기 위해 도와드리는 챗봇입니다. 저는 아직 개발중이에요."),
   ],
   customComponents: {
     // Replaces the default header
@@ -21,7 +23,6 @@ const config = {
     // Replaces the default user chat message
     userChatMessage: (props) => <ChatMessage {...props} />,
   },
-  
 };
 
 export default config;
