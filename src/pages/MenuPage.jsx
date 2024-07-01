@@ -27,6 +27,7 @@ const MenuTitle = styled.div`
   color: var(--Black, #333);
   font-size: 18px;
   font-weight: 500;
+  padding-bottom: 4px;
 `;
 
 const SettingIcon = styled.div`
@@ -157,7 +158,7 @@ const GoContract = styled.img`
   width: 100px;
   height: 100px;
   cursor: pointer;
-    margin-left: 13px;
+  margin-left: 13px;
 `;
 
 const MenuPage = () => {
@@ -169,7 +170,7 @@ const MenuPage = () => {
   };
 
   const handleLinkClick = () => {
-    window.open("https://www.kebhana.com/cont/mall/mall08/mall0805/index.jsp")
+    window.open("https://www.kebhana.com/cont/mall/mall08/mall0805/index.jsp");
   };
 
   const renderContent = () => {
@@ -322,32 +323,48 @@ const MenuPage = () => {
       <Nav />
       <TopPart>
         <CloseBtn onClick={handleClose}>
-          <img src={`${process.env.PUBLIC_URL}/images/x.svg`} alt="닫기"  onClick={handleClose}/>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/x.svg`}
+            alt="닫기"
+            onClick={handleClose}
+          />
         </CloseBtn>
         <MenuTitle>메뉴</MenuTitle>
         <SettingIcon onClick={() => navigate("/ing")}>
-          <img src={`${process.env.PUBLIC_URL}/images/setting.svg`} alt="설정" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/setting.svg`}
+            alt="설정"
+          />
         </SettingIcon>
       </TopPart>
       <NamePart>
         <PersonIcon>
-          <img src={`${process.env.PUBLIC_URL}/images/MY.svg`} alt="마이 아이콘" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/MY.svg`}
+            alt="마이 아이콘"
+          />
         </PersonIcon>
         <PersonNameTxt>HappyHana 님</PersonNameTxt>
         <GoContract
-        src={`${process.env.PUBLIC_URL}/images/goContract.svg`}
-        alt="contract"
-        onClick={() => navigate("/documentstorage")}
-      />
+          src={`${process.env.PUBLIC_URL}/images/goContract.svg`}
+          alt="contract"
+          onClick={() => navigate("/documentstorage")}
+        />
       </NamePart>
-      
+
       <FindPart onClick={() => navigate("/ing")}>
         <FindIcon>
-          <img src={`${process.env.PUBLIC_URL}/images/find.svg`} alt="검색 아이콘" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/find.svg`}
+            alt="검색 아이콘"
+          />
         </FindIcon>
         <FindMent>궁금한 것을 검색해 보세요</FindMent>
         <FindBtn>
-          <img src={`${process.env.PUBLIC_URL}/images/findbtn.svg`} alt="검색 버튼" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/findbtn.svg`}
+            alt="검색 버튼"
+          />
         </FindBtn>
       </FindPart>
       <FindunderLine />

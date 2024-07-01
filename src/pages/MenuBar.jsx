@@ -13,7 +13,7 @@ const Container = styled.div`
   background: #fff;
 `;
 const Btn = styled.div`
-  cursor : pointer;
+  cursor: pointer;
 `;
 
 const MenuBar = () => {
@@ -29,14 +29,14 @@ const MenuBar = () => {
     <Container>
       <Btn onClick={gotoMain}>
         <img
-          src={`${process.env.PUBLIC_URL}/images/home.svg`}
+          src={`${process.env.PUBLIC_URL}/images/home.png`}
           alt="logo"
           width="20.5px"
         />
       </Btn>
       <Btn onClick={() => navigate("/ing")}>
         <img
-          src={`${process.env.PUBLIC_URL}/images/product.svg`}
+          src={`${process.env.PUBLIC_URL}/images/product.png`}
           alt="logo"
           width="22px"
         />
