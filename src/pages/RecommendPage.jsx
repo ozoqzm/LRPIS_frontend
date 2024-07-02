@@ -3,11 +3,12 @@ import styled from "styled-components";
 import MenuBar from "./MenuBar";
 import RecommendNav from "./RecommendNav";
 
+import { useNavigate } from "react-router-dom";
+
 const Container = styled.div`
   position: relative;
   margin: 0 auto;
   width: 390px;
-  height: 800px;
   background: var(--Gray-Mobileregular, #f6f7f9);
 `;
 
@@ -22,12 +23,10 @@ const WhiteBox = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display : flex;
+  display: flex;
 `;
 
-const Locationicon = styled.div`
-
-`;
+const Locationicon = styled.div``;
 
 const Divider = styled.div`
   height: 28px;
@@ -42,14 +41,13 @@ const Select = styled.select`
 `;
 const Contenttxt = styled.span`
   color: #000;
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.26px;
-  padding : 20px;
-  margin-left : 10px;
+  padding: 20px;
+  margin-left: 10px;
 `;
 
 const Highlight = styled.span`
@@ -57,21 +55,9 @@ const Highlight = styled.span`
 `;
 
 const BoardWrapper2 = styled.div`
-  position: relative;
-  padding: 5px;
-  margin: auto;
-  margin-top: 10px;
   display: flex;
   flex-direction: column; /* 세로 정렬을 위해 flex-direction 추가 */
   align-items: center; /* 가운데 정렬 */
-  width: 360px;
-  height: 500px; /* 높이를 조정하여 화면에 모두 나타날 수 있도록 */
-  overflow-y: auto; /* 필요에 따라 세로 스크롤 추가 */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 `;
 
 const JobBoard = styled.div`
@@ -95,7 +81,6 @@ const JobBoard = styled.div`
   #location {
     margin-top: 10px;
     color: #888;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -107,12 +92,11 @@ const JobBoard = styled.div`
     width: 210px;
     height: 62px;
     border-radius: 15px;
-    margin-left : 30px;
+    margin-left: 30px;
   }
   #content {
     margin-top: 5px;
     color: #333;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -121,16 +105,14 @@ const JobBoard = styled.div`
   }
   #salary {
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     letter-spacing: -0.2px;
   }
-    #day {
+  #day {
     color: #888;
-    font-family: Inter;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
@@ -146,7 +128,6 @@ const JobBoard = styled.div`
     border-radius: 3px;
     background: #888;
     color: #fff;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
@@ -154,16 +135,42 @@ const JobBoard = styled.div`
     text-align: center;
   }
 `;
+const Another = styled.div`
+  font-size: 60px;
+  margin: 0 auto;
+  text-align: center;
+  margin: -34px;
+  padding-bottom: 20px;
+  color: #d9d9d9;
+`;
+const Footer = styled.div`
+  position: relative;
+  margin-top: 30px;
+  width: 390px;
+  height: 160px;
+  background: #eff0f4;
+  color: #888;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10;
+  letter-spacing: -0.2px;
+  text-decoration-line: underline;
+`;
+
 const RecommendPage = () => {
   const [region, setRegion] = useState("동대문구 전체");
   const [job, setJob] = useState("전체 업종");
+
+  const navigate = useNavigate();
 
   return (
     <Container>
       <RecommendNav />
       <WhiteBox>
         <Locationicon>
-            <img src="../images/location.svg" />
+          <img src="../images/location.svg" />
         </Locationicon>
         <Select value={region} onChange={(e) => setRegion(e.target.value)}>
           <option value="동대문구 전체">동대문구 전체</option>
@@ -191,7 +198,7 @@ const RecommendPage = () => {
       <Contenttxt>
         총 <Highlight>63</Highlight>건의 추천 구직 정보가 있어요
       </Contenttxt>
-      <BoardWrapper2>
+      <BoardWrapper2 onClick={() => navigate("/ing")}>
         <JobBoard>
           <div id="location">서울시 동대문구</div>
           <div id="dday">D-10</div>
@@ -249,6 +256,9 @@ const RecommendPage = () => {
           <div id="day">어제</div>
         </JobBoard>
       </BoardWrapper2>
+
+      <Another>...</Another>
+      <Footer>개인정보처리방침</Footer>
       <MenuBar />
     </Container>
   );

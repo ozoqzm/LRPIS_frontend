@@ -15,7 +15,6 @@ const DepositNotice = styled.div`
   margin-left: 25px;
   #nickname {
     color: #474c52;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -24,7 +23,6 @@ const DepositNotice = styled.div`
   }
   #content {
     color: #333;
-    font-family: Inter;
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
@@ -39,7 +37,6 @@ const Exception = styled.div`
   margin-bottom: 30px;
   color: #888;
   text-align: center;
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;

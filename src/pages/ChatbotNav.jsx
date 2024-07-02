@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = styled.div`
-  position: relative;
-  margin: 0 auto;
-  width: 370px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding: 0 23px;
+    position: relative;
+    margin: 0 auto;
+    width: 390px;
+    box-sizing: border-box;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    padding: 0 23px;
 `;
 
 const Backicon = styled.span`
@@ -18,7 +19,6 @@ const Backicon = styled.span`
 
 const PageTitle = styled.div`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -32,7 +32,6 @@ const Icon = styled.span``;
 
 const Language = styled.span`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -79,10 +78,10 @@ const ChatbotNav = () => {
           <img src={`${process.env.PUBLIC_URL}/images/notice.svg`} width="12px" alt="Notice" />
         </Icon>
         <Icon>
-          <img src={`${process.env.PUBLIC_URL}/images/profile.svg`} width="15px" alt="Profile" />
+          <img src={`${process.env.PUBLIC_URL}/images/profile.svg`} width="15px" alt="Profile" onClick={() => navigate("/ing")}></img>
         </Icon>
         <Icon>
-          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" />
+          <img src={`${process.env.PUBLIC_URL}/images/side.svg`} width="11.5px" alt="Side" onClick={() => navigate("/menupage")} />
         </Icon>
       </IconWrapper>
     </NavBar>
