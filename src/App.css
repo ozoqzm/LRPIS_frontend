@@ -39,6 +39,4 @@
 html,
 body {
   touch-action: manipulation;
-  touch-action: pan-y;
-  overflow-x: hidden;
 }
