@@ -259,6 +259,7 @@ const FloatBtn = styled.div`
   bottom: 120px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 `;
 const Footer = styled.div`
   position: relative;
