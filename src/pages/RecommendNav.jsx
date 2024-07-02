@@ -18,7 +18,6 @@ const Backicon = styled.span`
 const PageTitle = styled.div`
   width : 180px;
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -33,7 +32,6 @@ const Icon = styled.span`
 `;
 const Language = styled.span`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -86,7 +84,7 @@ const RecommendNav = () => {
               width="12px"
             />
           </Icon>
-          <Icon>
+          <Icon onClick={() => navigate("/ing")}>
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
               width="15px"
@@ -96,6 +94,7 @@ const RecommendNav = () => {
             <img
               src={`${process.env.PUBLIC_URL}/images/side.svg`}
               width="11.5px"
+              onClick={() => navigate("/menupage")} 
             />
           </Icon>
         </IconWrapper>

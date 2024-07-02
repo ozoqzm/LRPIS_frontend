@@ -4,19 +4,19 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = styled.div`
   position: relative;
-  margin: 0 auto;
-  width: 370px;
-  height: 61px;
-  display: flex;
-  align-items: center;
-  padding: 0 23px; 
+    margin: 0 auto;
+    width: 390px;
+    box-sizing: border-box;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    padding: 0 23px;
 `;
 const Backicon = styled.span`
   cursor : pointer;
 `;
 const PageTitle = styled.div`
     color: var(--Green, #089995);
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -29,7 +29,6 @@ const Icon = styled.span`
 `;
 const Language = styled.span`
   color: var(--Green, #089995);
-  font-family: Inter;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -87,12 +86,14 @@ const CommunityNav = () => {
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.svg`}
               width="15px"
+              onClick={() => navigate("/ing")}
             />
           </Icon>
           <Icon>
             <img
               src={`${process.env.PUBLIC_URL}/images/side.svg`}
               width="11.5px"
+              onClick={() => navigate("/menupage")} 
             />
           </Icon>
         </IconWrapper>
