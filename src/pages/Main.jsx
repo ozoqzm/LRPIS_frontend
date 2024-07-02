@@ -345,7 +345,7 @@ const Main = () => {
             />
           </span>
         </ManageBoard>
-        <div style={{ marginLeft: "20px" }} onClick={gotoAddJob}>
+        <div style={{ marginLeft: "20px" }} onClick={() => navigate("/ing")}>
           <img
             src={`${process.env.PUBLIC_URL}/images/addwork.svg`}
             height="196px"
